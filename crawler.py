@@ -22,10 +22,12 @@ def simple_crawler(url):
             if(element != "\n" or prec!="\n"):
                 print(element, end='')
             prec = element
-        
+        i = 1
         for link in soup.find_all('a'):
-            print(link.get('href'))
-            simple_crawler(str(link.get('href')))
+            
+            print(f'{i}:' +link.get('href'))
+            i+=1
+           
 
         #print(f'Title: {title} Content: {content}') 
 
