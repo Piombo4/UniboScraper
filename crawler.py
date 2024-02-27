@@ -24,9 +24,9 @@ def simple_crawler(url):
             prec = element
         i = 1
         for link in soup.find_all('a'):
-            
-            print(f'{i}:' +link.get('href'))
-            i+=1
+            linkRef = link.get("href")
+            if(str(linkRef).startswith("http")):
+               simple_crawler(linkRef)
            
 
         #print(f'Title: {title} Content: {content}') 
