@@ -1,9 +1,13 @@
 import requests 
 from bs4 import BeautifulSoup 
+visited = {}
 def simple_crawler(url): 
-
+    if(len(visited)>5):
+        
+        return
 # Send HTTP request to the URL 
     response = requests.get(url) 
+
 
 # Check if the request was successful (status code 200) 
 
@@ -22,13 +26,15 @@ def simple_crawler(url):
             if(element != "\n" or prec!="\n"):
                 print(element, end='')
             prec = element
-        i = 1
+        
         for link in soup.find_all('a'):
             linkRef = link.get("href")
+            hashLink = hash(linkRef)
             if(str(linkRef).startswith("http")):
-               simple_crawler(linkRef)
-           
-
+                if(visited.get(hashLink)== None):
+                    visited[hashLink] = linkRef
+                    simple_crawler(linkRef)
+        
         #print(f'Title: {title} Content: {content}') 
 
 # Additional data extraction and processing can be added here 
@@ -38,6 +44,11 @@ def simple_crawler(url):
         print(f'Error: Failed to fetch {url}') 
 
 def main():
-    simple_crawler("https://www.unibo.it/sitoweb/antonio.natali/didattica")
+    url = "https://www.unibo.it/sitoweb/antonio.natali/didattica"
+    visited[hash(url)] = url
+    simple_crawler(url)
+    print("\nFINITO\n")
+  
+
 if __name__ == "__main__":
     main()
