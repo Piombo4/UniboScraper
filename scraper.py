@@ -1,7 +1,7 @@
 import requests 
 from bs4 import BeautifulSoup 
 visited = {}
-def simple_crawler(url): 
+def simple_scraper(url): 
     if(len(visited)>5):
         
         return
@@ -33,9 +33,9 @@ def simple_crawler(url):
             if(str(linkRef).startswith("http")):
                 if(visited.get(hashLink)== None):
                     visited[hashLink] = linkRef
-                    simple_crawler(linkRef)
+                    simple_scraper(linkRef)
         
-        #print(f'Title: {title} Content: {content}') 
+        #print(f'Title: {title} Contendt: {content}') 
 
 # Additional data extraction and processing can be added here 
 
@@ -46,7 +46,7 @@ def simple_crawler(url):
 def main():
     url = "https://www.unibo.it/sitoweb/antonio.natali/didattica"
     visited[hash(url)] = url
-    simple_crawler(url)
+    simple_scraper(url)
     print("\nFINITO\n")
   
 
