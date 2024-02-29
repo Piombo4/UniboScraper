@@ -1,5 +1,6 @@
 import requests 
 from bs4 import BeautifulSoup 
+
 def simple_scraper(url): 
     response = requests.get(url) 
     if response.status_code == 200: 
@@ -8,12 +9,30 @@ def simple_scraper(url):
         for body in tbodies:
             for tr in body.find_all("tr"):
                 td = tr.find("td",class_="title")
-                a = td.find("a",)
-                #title = a.get_text()
-                print(a)
+                a = td.find("a")
+                if(a is None):
+                    title = td.get_text().strip()
+
+                else:
+                    title = a.get_text().strip()
+                    courseInfo = a.get("href")
+                    virtuale = courseInformationPage(courseInfo)
+                    #print(title + " -> " + virtuale)
+
         
     else: 
         print(f'Error: Failed to fetch {url}') 
+ 
+def courseInformationPage(url):
+    response = requests.get(url) 
+    if response.status_code == 200: 
+        soup = BeautifulSoup(response.text, 'html.parser') 
+        div = soup.find("div",class_="text-wrap")
+        if(div is None):
+            return "Nessun virtuale trovato"
+        else: 
+             print(type(div))
+             #div.find("a").get("href")
 
 def main():
     url = "https://corsi.unibo.it/magistrale/ingegneriainformatica/insegnamenti/piano/2023/5826/B21/000/2023"
