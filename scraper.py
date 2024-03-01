@@ -33,7 +33,7 @@ def courseInformationPage(url):
             a = div.find("a") 
             return "Nessun virtuale trovato" if a is None else a.get("href")
 def main():
-    url = "https://corsi.unibo.it/magistralecu/Giurisprudenza-Bologna/insegnamenti/piano/2023/9232/000/000/2023"
+    url = "https://corsi.unibo.it/magistrale/ingegneriainformatica/insegnamenti/piano/2023/5826/B21/000/2023"
     simple_scraper(url)
     print("\nFINITO\n")
 
