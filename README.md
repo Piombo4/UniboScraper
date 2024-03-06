@@ -1,5 +1,5 @@
 ## UniboScraper
-Semplice Scraper che prende in ingresso il link del piano didattico di un corso dell'Università di Bologna e restituisce link al virtuale degli esami.
+Semplice Scraper che prende in ingresso il link del piano didattico di un corso dell'Università di Bologna e restituisce il link al virtuale degli esami.
 ### Esempio
 Passando come argomento questo link: https://corsi.unibo.it/magistrale/ingegneriainformatica/insegnamenti/piano/2023/5826/B21/000/2023
 <div>
