@@ -4,7 +4,7 @@ Semplice Scraper che prende in ingresso il link del piano didattico di un corso 
 Passando questo link: https://corsi.unibo.it/magistrale/ingegneriainformatica/insegnamenti/piano/2023/5826/B21/000/2023
 <br>
 Si ottiene: 
-SICUREZZA DELL'INFORMAZIONE M -> https://virtuale.unibo.it/course/view.php?id=47581
+SICUREZZA DELL'INFORMAZIONE M -> https://virtuale.unibo.it/course/view.php?id=47581 <br>
 RICERCA OPERATIVA M -> https://virtuale.unibo.it/course/view.php?id=45659
 SISTEMI DIGITALI M -> https://virtuale.unibo.it/course/view.php?id=47800
 LINGUAGGI E MODELLI COMPUTAZIONALI M -> https://virtuale.unibo.it/course/view.php?id=46893
