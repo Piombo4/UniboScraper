@@ -40,7 +40,6 @@ class UniboScraper:
                         executor.submit(self.fetch_course_info, tr)
         else: 
             print(f'Error: Failed to fetch {self.url}') 
-
 if __name__ == '__main__':
     cc = UniboScraper('https://corsi.unibo.it/magistrale/ingegneriainformatica/insegnamenti/piano/2023/5826/B21/000/2023')
     cc.startScraper()
